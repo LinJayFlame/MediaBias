@@ -15,24 +15,18 @@ class SimpleDataset:
     def __getitem__(self, idx):
         return {k: v[idx] for k, v in self.tokenized_texts.items()}
 
-def sentimentAnalysis(news_dict: dict[str, list[str]]):
+def sentimentAnalysis(articleList: list[str]):
     model_name = "siebert/sentiment-roberta-large-english"
     tokeniser = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
     trainer = Trainer(model=model)
 
-    res = {}
-    for company, articleList in tqdm.tqdm(news_dict.items()):
-        scoreList = []
-        for article in articleList:
-            scoreList.append(get_score(article, tokeniser, trainer))
-        
-        scoreArray = np.array(scoreList)
-        mean = scoreArray.mean()
+    scoreList = []
+    for article in tqdm.tqdm(articleList):
+        scoreList.append(get_score(article, tokeniser, trainer))
 
-        res[company] = float(mean)
-    return res
-
+    scoreArray = np.array(scoreList)
+    return scoreArray.mean()
         
 def get_score(file: str, tokeniser, trainer):
     filename = 'data/' + file
@@ -48,5 +42,5 @@ def get_score(file: str, tokeniser, trainer):
     scores = predictions.predictions.argmax(-1)
     return scores.mean()
 
-score = sentimentAnalysis({"Brookings": ["Brookings_1.csv", "Brookings_2.csv"], "HBR": ["HBR_1.csv"]})
+score = sentimentAnalysis(["HBR_1.csv"])
 print(score)
