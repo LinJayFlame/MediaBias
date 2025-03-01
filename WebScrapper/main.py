@@ -52,32 +52,14 @@ Rules:
 # "https://www.brookings.edu/articles/the-world-needs-a-premortem-on-generative-ai-and-its-use-in-education",
 # "https://www.channelnewsasia.com/today/voices/commentary-cyberloafing-new-norm-among-youths-why-its-bad-and-how-tackle-it-4867506",
 # "https://www.channelnewsasia.com/singapore/commentary-real-culprit-making-our-children-dumb-isnt-e-learning-990926",
+# "https://www.forbes.com/sites/michaelhorn/2017/11/14/new-research-answers-whether-technology-is-good-or-bad-for-learning",
+# "https://www.forbes.com/sites/ronschmelzer/2024/05/28/how-ai-is-shaping-the-future-of-education"
+# "https://www.bbc.com/storyworks/specials/the-new-normal/the-drive-to-do-good"
 
 results = [
-"https://www.forbes.com/sites/michaelhorn/2017/11/14/new-research-answers-whether-technology-is-good-or-bad-for-learning",
-"https://www.forbes.com/sites/ronschmelzer/2024/05/28/how-ai-is-shaping-the-future-of-education"
+"https://www.channelnewsasia.com/commentary/tech-solutions-problems-smart-city-user-design-4788581",
+"https://www.channelnewsasia.com/commentary/ai-potential-reshape-societies-industries-healthcare-climate-change-4951701"
 ]
-
-
 
 for i in range(len(results)):
     asyncio.run(all_paragraph_scraping(results[i], i))
-
-
-
-
-
-
-
-
-#gives a sentiment analysis on each company based on a given topic
-#when user queries
-#perplexity AI queries based on that query and the news sources that we saved in our database
-#for each of the news (maybe we query 5 related news for each source) in each of the news source , 
-# we implement all paragraph scraping and run Keith's backeng logic on the scraped text to give it a setimental score.)
-#the aggregation of the sentimental scores reflect the overall sentimental score of that news source on that topic
-
-
-#user inputs a query
-#search engine starts to search through multiple websites to check
-#for each website, put the link into input variable and scrape the relevant data
