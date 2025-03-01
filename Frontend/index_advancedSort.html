@@ -25,7 +25,6 @@
       padding: 0;
     }
 
-    /* Allow vertical scrolling */
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg);
@@ -33,7 +32,6 @@
       line-height: 1.6;
     }
 
-    /* Header with black background */
     .header {
       background: #000;
       position: relative;
@@ -80,7 +78,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Trust Statement */
     .trust-container {
       text-align: center;
       padding: 1.5rem;
@@ -97,14 +94,12 @@
       margin: 0 auto;
     }
 
-    /* Main Layout */
     .main-container {
       display: flex;
       background: linear-gradient(120deg, var(--accent-light), var(--bg));
       padding-bottom: 2rem;
     }
 
-    /* Sidebar (Filter) */
     .sidebar {
       position: relative;
       width: 300px;
@@ -152,14 +147,12 @@
       left: 50%;
       transform: translateX(-50%);
     }
-
     .sidebar h3 {
       margin-top: 3rem;
       margin-bottom: 1rem;
       color: var(--primary);
       font-size: 1.1rem;
     }
-
     .search-bar {
       margin-bottom: 1rem;
     }
@@ -170,8 +163,6 @@
       border-radius: 4px;
       font-size: 0.9rem;
     }
-
-    /* Sort Options */
     .sort-options {
       margin-bottom: 1rem;
     }
@@ -188,7 +179,6 @@
       border-radius: 4px;
       cursor: pointer;
     }
-
     .button-group {
       display: flex;
       justify-content: space-between;
@@ -209,7 +199,6 @@
     .button-group button:hover {
       background: #2b4a7f;
     }
-
     .filter-options {
       flex: 1;
       overflow-y: auto;
@@ -232,7 +221,6 @@
       margin-right: 0.5rem;
     }
 
-    /* Content Area */
     .content {
       flex: 1;
       display: flex;
@@ -255,25 +243,27 @@
       transform: scale(1.02);
     }
 
-    /* Axis Styles */
-    .axis-header {
-      text-align: center;
+    .axis-section {
       margin-bottom: 2rem;
     }
-    .axis-title {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+    .axis-header {
+      text-align: center;
+      margin-bottom: 1rem;
     }
-    .axis-subtitle {
+    .axis-header .axis-topic {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+    .axis-header .axis-subtopic {
       color: #718096;
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
     }
     .axis-container {
       position: relative;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
     .axis {
       height: 8px;
@@ -293,7 +283,6 @@
       font-weight: 500;
     }
 
-    /* Company Markers */
     .company-marker {
       position: absolute;
       top: -40px;
@@ -358,7 +347,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       pointer-events: none;
     }
-    /* Show both name and score on hover */
     .company-marker:hover .company-name,
     .company-marker:hover .company-score {
       opacity: 1;
@@ -373,7 +361,6 @@
       opacity: 0.1;
     }
 
-    /* About Us Section */
     .about-section {
       background: var(--accent-dark);
       padding: 3rem 1.5rem;
@@ -390,7 +377,7 @@
       line-height: 1.6;
       color: var(--text);
     }
-    .about-cta {
+    .about-section .about-cta {
       display: inline-block;
       background: var(--primary);
       color: #fff;
@@ -400,11 +387,10 @@
       font-weight: 600;
       transition: background var(--transition-speed) ease;
     }
-    .about-cta:hover {
+    .about-section .about-cta:hover {
       background: #2b4a7f;
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 1.5rem;
@@ -414,7 +400,6 @@
       color: #718096;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .banner-container { height: 120px; }
       .visualization-container { padding: 1.5rem; }
@@ -440,9 +425,7 @@
     <p class="trust-statement">Trusted by Leading Organizations Worldwide</p>
   </div>
 
-  <!-- Main Layout: sidebar + content area in a flex container -->
   <div class="main-container">
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <button class="collapse-btn" id="collapseBtn" aria-label="Toggle Filter">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
@@ -456,7 +439,6 @@
         <input type="text" id="searchInput" placeholder="Search For A Company..."/>
       </div>
 
-      <!-- Sort dropdown for advanced sorting -->
       <div class="sort-options">
         <label for="sortSelect">Sort By:</label>
         <select id="sortSelect">
@@ -472,32 +454,57 @@
         <button id="uncheckAllBtn">Uncheck All</button>
       </div>
 
-      <div class="filter-options" id="filterOptions">
-        <!-- Dynamically generated from JS -->
-      </div>
+      <div class="filter-options" id="filterOptions"></div>
     </aside>
 
-    <!-- Main Content Area -->
     <main class="content">
       <div class="visualization-container">
-        <div class="axis-header">
-          <h2 class="axis-title">Media Sentiment Index</h2>
-          <p class="axis-subtitle">Analysis of News Outlet Sentiment Based On Verified Public Perception Metrics</p>
-        </div>
-        <div class="axis-container">
-          <div class="axis-labels">
-            <span>Pessimism (-1.0)</span>
-            <span>Optimism (+1.0)</span>
+        <!-- Work Axis -->
+        <div class="axis-section" id="workSection">
+          <div class="axis-header">
+            <div class="axis-topic">Work</div>
+            <div class="axis-subtopic">Work Sentiment (0 = Negative, 1 = Positive)</div>
           </div>
-          <div class="axis" id="mainAxis">
-            <!-- Company markers will be added here -->
+          <div class="axis-container">
+            <div class="axis-labels">
+              <span>0.0</span>
+              <span>1.0</span>
+            </div>
+            <div class="axis" id="workAxis"></div>
+          </div>
+        </div>
+        <!-- Learning Axis -->
+        <div class="axis-section" id="learningSection">
+          <div class="axis-header">
+            <div class="axis-topic">Learning</div>
+            <div class="axis-subtopic">Learning Sentiment (0 = Negative, 1 = Positive)</div>
+          </div>
+          <div class="axis-container">
+            <div class="axis-labels">
+              <span>0.0</span>
+              <span>1.0</span>
+            </div>
+            <div class="axis" id="learningAxis"></div>
+          </div>
+        </div>
+        <!-- Living Axis -->
+        <div class="axis-section" id="livingSection">
+          <div class="axis-header">
+            <div class="axis-topic">Living</div>
+            <div class="axis-subtopic">Living Sentiment (0 = Negative, 1 = Positive)</div>
+          </div>
+          <div class="axis-container">
+            <div class="axis-labels">
+              <span>0.0</span>
+              <span>1.0</span>
+            </div>
+            <div class="axis" id="livingAxis"></div>
           </div>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- About Us Section -->
   <section class="about-section">
     <h2>About Us</h2>
     <p>
@@ -522,68 +529,92 @@
   </footer>
 
   <script>
+    // Our array of companies with just name/logo/website
     const companies = [
       { name: "New York Times", logo: "./logos/nytimes.jpg", website: "https://www.nytimes.com" },
       { name: "Straits Times", logo: "./logos/straits_times.png", website: "https://www.straitstimes.com" },
-      { name: "BBC News", logo: "./logos/bbc_news.jpg", website: "https://www.bbc.com/news" },
       { name: "The Guardian", logo: "./logos/guardian.jpg", website: "https://www.theguardian.com/international" },
       { name: "CNN", logo: "./logos/cnn.png", website: "https://edition.cnn.com/" },
-      { name: "Harvard Business Review", logo: "./logos/hbr.png", website: "https://www.hbr.org" },
-      { name: "Forbes", logo: "./logos/forbes.webp", website: "https://www.hbr.org" },
+      { name: "Forbes", logo: "./logos/forbes.webp", website: "https://www.forbes.com" },
       { name: "CNA", logo: "./logos/cna.png", website: "https://www.channelnewsasia.com" },
-      { name: "Brookings", logo: "./logos/brookings.png", website: "https://www.brookings.edu" },
+      { name: "Brookings", logo: "./logos/brookings.png", website: "https://www.brookings.edu" }
     ];
 
-    // Example function to fetch sentiment score from your backend API.
-    async function fetchSentimentScore(companyName) {
-      const endpoint = `https://api.example.com/sentiment?company=${encodeURIComponent(companyName)}`;
+    /**
+     * Generic function to fetch the sentiment score for a given company and topic.
+     * @param {string} companyName
+     * @param {string} topic - e.g. "work", "learning", or "living"
+     * @returns {number|null} - the sentiment score in [0,1] or null if error
+     */
+    async function fetchTopicScore(companyName, topic) {
+      // e.g. "https://api.example.com/sentiment?company=NYTimes&topic=work"
+      const endpoint = `https://api.example.com/sentiment?company=${encodeURIComponent(companyName)}&topic=${encodeURIComponent(topic)}`;
       try {
         const response = await fetch(endpoint);
         if (!response.ok) {
-          console.error(`Failed to fetch score for ${companyName}`);
+          console.error(`Failed to fetch ${topic} score for ${companyName}`);
           return null;
         }
         const data = await response.json();
-        return data.score;
+        return data.score; // expected to be 0..1
       } catch (error) {
-        console.error("Error fetching sentiment score:", error);
+        console.error(`Error fetching ${topic} score:`, error);
         return null;
       }
     }
 
-    // Populate filter options. 
-    // Optionally preserve which checkboxes are checked if a 'checkedSet' is passed in.
-    function populateFilterOptions(list, checkedSet = null) {
+    /**
+     * For each company, fetch three separate scores from your backend:
+     * - Work
+     * - Learning
+     * - Living
+     * Then store them in company.workScore, company.learningScore, company.livingScore
+     */
+    async function fetchAllScores() {
+      const fetchPromises = companies.map(async (company) => {
+        const workScore = await fetchTopicScore(company.name, "work");
+        const learningScore = await fetchTopicScore(company.name, "learning");
+        const livingScore = await fetchTopicScore(company.name, "living");
+
+        company.workScore = (typeof workScore === "number") ? workScore : 0;
+        company.learningScore = (typeof learningScore === "number") ? learningScore : 0;
+        company.livingScore = (typeof livingScore === "number") ? livingScore : 0;
+      });
+      await Promise.all(fetchPromises);
+    }
+
+    // Return aggregated average across 3 topics
+    function getAggregateScore(company) {
+      const sum = (company.workScore || 0) + (company.learningScore || 0) + (company.livingScore || 0);
+      return sum / 3;
+    }
+
+    function populateFilterOptions(list) {
       const filterOptions = document.getElementById("filterOptions");
       filterOptions.innerHTML = "";
-
       list.forEach((company) => {
         const label = document.createElement("label");
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.className = "company-filter";
         checkbox.dataset.company = company.name;
-        
-        // If we have a checkedSet, use it to determine if this should be checked
-        if (checkedSet) {
-          checkbox.checked = checkedSet.has(company.name);
-        } else {
-          checkbox.checked = true;
-        }
-
+        checkbox.checked = true; // default to checked
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(company.name));
         filterOptions.appendChild(label);
       });
     }
 
-    // Create marker on the axis for each selected company
-    function createMarker(company) {
+    function createMarker(company, topic) {
       const marker = document.createElement("div");
       marker.className = "company-marker";
 
-      const score = typeof company.score === "number" ? company.score : 0;
-      const position = ((score + 1) / 2) * 100;
+      let topicScore = 0;
+      if (topic === "work") topicScore = company.workScore;
+      else if (topic === "learning") topicScore = company.learningScore;
+      else if (topic === "living") topicScore = company.livingScore;
+
+      const position = topicScore * 100;
       marker.style.left = `${position}%`;
 
       const link = document.createElement("a");
@@ -599,10 +630,10 @@
       const nameTag = document.createElement("div");
       nameTag.className = "company-name";
       nameTag.textContent = company.name;
-      
+
       const scoreTag = document.createElement("div");
       scoreTag.className = "company-score";
-      scoreTag.textContent = `Score: ${company.score.toFixed(2)}`;
+      scoreTag.textContent = `Score: ${topicScore.toFixed(2)}`;
 
       const line = document.createElement("div");
       line.className = "score-line";
@@ -616,14 +647,13 @@
       return marker;
     }
 
-    // Render markers on the axis for currently checked companies
-    function renderMarkers() {
-      const axis = document.getElementById("mainAxis");
+    // Renders markers for a single axis
+    function renderMarkersForAxis(axisId, topic) {
+      const axis = document.getElementById(axisId);
       axis.innerHTML = "";
 
       const checkboxes = document.querySelectorAll(".company-filter");
       const selectedCompanies = [];
-
       checkboxes.forEach((cb) => {
         if (cb.checked) {
           const comp = companies.find(c => c.name === cb.dataset.company);
@@ -632,31 +662,37 @@
       });
 
       selectedCompanies.forEach((company, index) => {
-        if (typeof company.score === "number") {
+        if (typeof company[`${topic}Score`] === "number") {
           setTimeout(() => {
-            axis.appendChild(createMarker(company));
+            axis.appendChild(createMarker(company, topic));
           }, index * 150);
         }
       });
     }
 
-    // Advanced Sorting: sorts the global 'companies' array, repopulates filter list, then re-renders
+    // Renders all 3 axes
+    function renderAllMarkers() {
+      renderMarkersForAxis("workAxis", "work");
+      renderMarkersForAxis("learningAxis", "learning");
+      renderMarkersForAxis("livingAxis", "living");
+    }
+
+    // Only reorder the filter list, do not refresh the bars
     function applySorting() {
-      // 1. Save current checked states
+      // Save check states
       const checkboxes = document.querySelectorAll(".company-filter");
       const checkedSet = new Set();
       checkboxes.forEach(cb => {
         if (cb.checked) checkedSet.add(cb.dataset.company);
       });
 
-      // 2. Determine the selected sort option
       const sortOption = document.getElementById("sortSelect").value;
       switch (sortOption) {
         case "score-asc":
-          companies.sort((a, b) => a.score - b.score);
+          companies.sort((a, b) => getAggregateScore(a) - getAggregateScore(b));
           break;
         case "score-desc":
-          companies.sort((a, b) => b.score - a.score);
+          companies.sort((a, b) => getAggregateScore(b) - getAggregateScore(a));
           break;
         case "name-asc":
           companies.sort((a, b) => a.name.localeCompare(b.name));
@@ -665,25 +701,38 @@
           companies.sort((a, b) => b.name.localeCompare(a.name));
           break;
         default:
-          // do nothing
           break;
       }
 
-      // 3. Re-populate the filter list with the new sorted order, preserving which are checked
-      populateFilterOptions(companies, checkedSet);
+      // Re-populate filter list in sorted order
+      const filterOptions = document.getElementById("filterOptions");
+      filterOptions.innerHTML = "";
+      companies.forEach((company) => {
+        const label = document.createElement("label");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "company-filter";
+        checkbox.dataset.company = company.name;
+        // preserve check state
+        checkbox.checked = checkedSet.has(company.name);
 
-      // 4. Render the markers again
-      renderMarkers();
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(company.name));
+        filterOptions.appendChild(label);
+      });
+
+      // No re-render => bars remain as is
+      console.log("Sort changed to:", sortOption, "(filter list updated, bars not refreshed).");
     }
 
     function checkAll() {
       document.querySelectorAll(".company-filter").forEach(cb => cb.checked = true);
-      renderMarkers();
+      renderAllMarkers();
     }
 
     function uncheckAll() {
       document.querySelectorAll(".company-filter").forEach(cb => cb.checked = false);
-      renderMarkers();
+      renderAllMarkers();
     }
 
     function filterCompanyList() {
@@ -700,35 +749,27 @@
       document.getElementById("sidebar").classList.toggle("collapsed");
     }
 
-    async function fetchAllScores() {
-      const fetchPromises = companies.map(async (company) => {
-        const score = await fetchSentimentScore(company.name);
-        // fallback to 0 if the score is not a number
-        company.score = (typeof score === "number") ? score : 0;
-      });
-      await Promise.all(fetchPromises);
-    }
-
+    // Main initialization
     async function init() {
-      // Initially, no sorting is done, so we populate in the order 'companies' is declared
+      // 1. Populate the filter list
       populateFilterOptions(companies);
 
-      // Fetch all scores from the backend
+      // 2. Fetch all scores (3 separate API calls per company)
       await fetchAllScores();
 
-      // Render the markers
-      renderMarkers();
+      // 3. Render the markers once
+      renderAllMarkers();
 
-      // Event listeners
+      // 4. Attach event listeners
       document.querySelectorAll(".company-filter").forEach(cb => {
-        cb.addEventListener("change", renderMarkers);
+        cb.addEventListener("change", renderAllMarkers);
       });
       document.getElementById("checkAllBtn").addEventListener("click", checkAll);
       document.getElementById("uncheckAllBtn").addEventListener("click", uncheckAll);
       document.getElementById("searchInput").addEventListener("input", filterCompanyList);
       document.getElementById("collapseBtn").addEventListener("click", toggleSidebar);
 
-      // When the user changes the sort option, re-sort & repopulate
+      // Sorting updates filter list only
       document.getElementById("sortSelect").addEventListener("change", applySorting);
     }
 
