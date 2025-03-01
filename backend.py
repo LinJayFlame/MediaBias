@@ -31,7 +31,6 @@ def getSentiments(category):
         }
     elif category == "living":
         return {
-            "New York Times": 0.,
             "Straits Times": 0.,
             "BBC News": 0.58,
             "The Guardian": 0.,
