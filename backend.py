@@ -1,5 +1,3 @@
-# Activate virtual environment first through venv/Scripts/activate
-# and install dependencies in requirements.txt
 import pandas as pd
 import numpy as np
 import tqdm
@@ -14,6 +12,26 @@ class SimpleDataset:
 
     def __getitem__(self, idx):
         return {k: v[idx] for k, v in self.tokenized_texts.items()}
+
+# actual code is commented out as the roberta model takes a long time to execute the query
+# a cache of the results is used instead
+def getSentiments():
+    # nyt_score = sentimentAnalysis(["New_York_Times.csv", "New_York_Times_2.csv", ...])
+    # st_score = sentimentAnalysis(...)
+    # ...
+
+    return {
+        "New York Times": 0.50,
+        "Straits Times": 0.78,
+        "BBC News": 0.74,
+        "The Guardian": 0.77,
+        "CNN": 0.72,
+        "Harvard Business Review": 0.72,
+        "Forbes": 0.89,
+        "CNA": 0.86,
+        "Brookings": 0.78
+    }
+
 
 def sentimentAnalysis(articleList: list[str]):
     model_name = "siebert/sentiment-roberta-large-english"
@@ -41,6 +59,3 @@ def get_score(file: str, tokeniser, trainer):
 
     scores = predictions.predictions.argmax(-1)
     return scores.mean()
-
-score = sentimentAnalysis(["HBR_1.csv"])
-print(score)
