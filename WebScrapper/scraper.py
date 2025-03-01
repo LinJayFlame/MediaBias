@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 async def scrape(url):
     try:
         request = requests.get(url)
@@ -10,7 +9,6 @@ async def scrape(url):
     except Exception as e:
         print(e)
         return None, None
-
 
 async def raw_data_scraping(query):
     try:
@@ -21,7 +19,6 @@ async def raw_data_scraping(query):
         return
     except Exception as e:
         return e
-
 
 async def all_paragraph_scraping(query):
     try:

@@ -16,7 +16,7 @@ class SimpleDataset:
 # actual code is commented out as the roberta model takes a long time to execute the query
 # a cache of the results is used instead
 def getSentiments():
-    # nyt_score = sentimentAnalysis(["New_York_Times.csv", "New_York_Times_2.csv", ...])
+    # nyt_score = sentimentAnalysis(["New_York_Times.csv", "New_York_Times_2.csv", ...], "work")
     # st_score = sentimentAnalysis(...)
     # ...
 
@@ -33,7 +33,7 @@ def getSentiments():
     }
 
 
-def sentimentAnalysis(articleList: list[str]):
+def sentimentAnalysis(articleList: list[str], category: str):
     model_name = "siebert/sentiment-roberta-large-english"
     tokeniser = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
@@ -41,13 +41,13 @@ def sentimentAnalysis(articleList: list[str]):
 
     scoreList = []
     for article in tqdm.tqdm(articleList):
-        scoreList.append(get_score(article, tokeniser, trainer))
+        scoreList.append(get_score(article, category, tokeniser, trainer))
 
     scoreArray = np.array(scoreList)
     return scoreArray.mean()
         
-def get_score(file: str, tokeniser, trainer):
-    filename = 'data/' + file
+def get_score(file: str, category: str, tokeniser, trainer):
+    filename = 'data/' + category + '/' + file
     data = pd.read_csv(filename)
     
     raw_sentences = data["text"]
