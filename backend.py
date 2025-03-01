@@ -21,8 +21,6 @@ def getSentiments(category):
     # ...
     if category == "work":
         return {
-            "New York Times": 0.50,
-            "Straits Times": 0.78,
             "BBC News": 0.74,
             "The Guardian": 0.77,
             "CNN": 0.72,
@@ -32,8 +30,6 @@ def getSentiments(category):
         }
     elif category == "living":
         return {
-            "New York Times": 0.,
-            "Straits Times": 0.,
             "BBC News": 0.,
             "The Guardian": 0.,
             "CNN": 0.,
@@ -43,8 +39,6 @@ def getSentiments(category):
         }
     elif category == "learning":
         return {
-            "New York Times": 0.,
-            "Straits Times": 0.,
             "BBC News": 0.,
             "The Guardian": 0.,
             "CNN": 0.,
