@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Import Google Fonts for a refined look -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Media Sentiment Index | Insight Analytics</title>
@@ -14,24 +13,20 @@
       --text: #2d3748;
       --border: #e2e8f0;
       --transition-speed: 0.3s;
-      /* Additional accent colors */
       --accent-light: #eef2f6;
       --accent-dark: #e2e8f0;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-
     .header {
       background: #000;
       position: relative;
@@ -77,7 +72,6 @@
       font-size: 1.1rem;
       letter-spacing: 0.5px;
     }
-
     .trust-container {
       text-align: center;
       padding: 1.5rem;
@@ -93,13 +87,11 @@
       max-width: 800px;
       margin: 0 auto;
     }
-
     .main-container {
       display: flex;
       background: linear-gradient(120deg, var(--accent-light), var(--bg));
       padding-bottom: 2rem;
     }
-
     .sidebar {
       position: relative;
       width: 300px;
@@ -220,7 +212,6 @@
     .filter-options input {
       margin-right: 0.5rem;
     }
-
     .content {
       flex: 1;
       display: flex;
@@ -242,7 +233,6 @@
     .visualization-container:hover {
       transform: scale(1.02);
     }
-
     .axis-section {
       margin-bottom: 2rem;
     }
@@ -282,7 +272,6 @@
       color: #718096;
       font-weight: 500;
     }
-
     .company-marker {
       position: absolute;
       top: -40px;
@@ -360,7 +349,6 @@
       left: 50%;
       opacity: 0.1;
     }
-
     .about-section {
       background: var(--accent-dark);
       padding: 3rem 1.5rem;
@@ -390,7 +378,6 @@
     .about-section .about-cta:hover {
       background: #2b4a7f;
     }
-
     .footer {
       text-align: center;
       padding: 1.5rem;
@@ -399,7 +386,6 @@
       font-size: 0.85rem;
       color: #718096;
     }
-
     @media (max-width: 768px) {
       .banner-container { height: 120px; }
       .visualization-container { padding: 1.5rem; }
@@ -473,6 +459,7 @@
             <div class="axis" id="workAxis"></div>
           </div>
         </div>
+
         <!-- Learning Axis -->
         <div class="axis-section" id="learningSection">
           <div class="axis-header">
@@ -487,6 +474,7 @@
             <div class="axis" id="learningAxis"></div>
           </div>
         </div>
+
         <!-- Living Axis -->
         <div class="axis-section" id="livingSection">
           <div class="axis-header">
@@ -508,18 +496,10 @@
   <section class="about-section">
     <h2>About Us</h2>
     <p>
-      MediaPulse is a leading provider of advanced media sentiment 
-      analysis solutions, helping organizations worldwide make data-driven 
-      decisions. Our ISO-certified methodologies and cutting-edge technology 
-      ensure the most accurate, up-to-date insights into public perception 
-      across all major news outlets.
+      MediaPulse is a leading provider of advanced media sentiment analysis solutions, helping organizations worldwide make data-driven decisions. Our ISO-certified methodologies and cutting-edge technology ensure the most accurate, up-to-date insights into public perception across all major news outlets.
     </p>
     <p>
-      Our dedicated team of data scientists and analysts work tirelessly 
-      to refine our algorithms, guaranteeing that our clients receive 
-      unparalleled clarity into media biases and trends. We believe in 
-      empowering businesses, governments, and NGOs with actionable intelligence 
-      to foster a more informed and transparent society.
+      Our dedicated team of data scientists and analysts work tirelessly to refine our algorithms, guaranteeing that our clients receive unparalleled clarity into media biases and trends. We believe in empowering businesses, governments, and NGOs with actionable intelligence to foster a more informed and transparent society.
     </p>
     <a class="about-cta" href="#contactUs">Get in Touch</a>
   </section>
@@ -529,10 +509,8 @@
   </footer>
 
   <script>
-    // Our array of companies with just name/logo/website
     const companies = [
-      { name: "New York Times", logo: "./logos/nytimes.jpg", website: "https://www.nytimes.com" },
-      { name: "Straits Times", logo: "./logos/straits_times.png", website: "https://www.straitstimes.com" },
+      { name: "BBC News", logo: "./logos/bbc_news.jpg", website: "https://bbc.com/news" },
       { name: "The Guardian", logo: "./logos/guardian.jpg", website: "https://www.theguardian.com/international" },
       { name: "CNN", logo: "./logos/cnn.png", website: "https://edition.cnn.com/" },
       { name: "Forbes", logo: "./logos/forbes.webp", website: "https://www.forbes.com" },
@@ -540,50 +518,34 @@
       { name: "Brookings", logo: "./logos/brookings.png", website: "https://www.brookings.edu" }
     ];
 
-    /**
-     * Generic function to fetch the sentiment score for a given company and topic.
-     * @param {string} companyName
-     * @param {string} topic - e.g. "work", "learning", or "living"
-     * @returns {number|null} - the sentiment score in [0,1] or null if error
-     */
-    async function fetchTopicScore(companyName, topic) {
-      // e.g. "https://api.example.com/sentiment?company=NYTimes&topic=work"
-      const endpoint = `https://api.example.com/sentiment?company=${encodeURIComponent(companyName)}&topic=${encodeURIComponent(topic)}`;
+    async function fetchCategoryScores(category) {
+      const endpoint = `http://127.0.0.1:5000/sentiment/${encodeURIComponent(category)}`;
       try {
         const response = await fetch(endpoint);
         if (!response.ok) {
-          console.error(`Failed to fetch ${topic} score for ${companyName}`);
-          return null;
+          console.error(`Failed to fetch ${category} scores`);
+          return {};
         }
-        const data = await response.json();
-        return data.score; // expected to be 0..1
+        console.log(`Fetched ${category} scores`);
+        return await response.json();
       } catch (error) {
-        console.error(`Error fetching ${topic} score:`, error);
-        return null;
+        console.error(`Error fetching ${category} scores:`, error);
+        return {};
       }
     }
 
-    /**
-     * For each company, fetch three separate scores from your backend:
-     * - Work
-     * - Learning
-     * - Living
-     * Then store them in company.workScore, company.learningScore, company.livingScore
-     */
     async function fetchAllScores() {
-      const fetchPromises = companies.map(async (company) => {
-        const workScore = await fetchTopicScore(company.name, "work");
-        const learningScore = await fetchTopicScore(company.name, "learning");
-        const livingScore = await fetchTopicScore(company.name, "living");
+      const workRes = await fetchCategoryScores("work");
+      const learningRes = await fetchCategoryScores("learning");
+      const livingRes = await fetchCategoryScores("living");
 
-        company.workScore = (typeof workScore === "number") ? workScore : 0;
-        company.learningScore = (typeof learningScore === "number") ? learningScore : 0;
-        company.livingScore = (typeof livingScore === "number") ? livingScore : 0;
+      companies.forEach(company => {
+        company.workScore = workRes[company.name] ?? 0;
+        company.learningScore = learningRes[company.name] ?? 0;
+        company.livingScore = livingRes[company.name] ?? 0;
       });
-      await Promise.all(fetchPromises);
     }
 
-    // Return aggregated average across 3 topics
     function getAggregateScore(company) {
       const sum = (company.workScore || 0) + (company.learningScore || 0) + (company.livingScore || 0);
       return sum / 3;
@@ -598,7 +560,7 @@
         checkbox.type = "checkbox";
         checkbox.className = "company-filter";
         checkbox.dataset.company = company.name;
-        checkbox.checked = true; // default to checked
+        checkbox.checked = true;
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(company.name));
         filterOptions.appendChild(label);
@@ -647,11 +609,9 @@
       return marker;
     }
 
-    // Renders markers for a single axis
     function renderMarkersForAxis(axisId, topic) {
       const axis = document.getElementById(axisId);
       axis.innerHTML = "";
-
       const checkboxes = document.querySelectorAll(".company-filter");
       const selectedCompanies = [];
       checkboxes.forEach((cb) => {
@@ -660,7 +620,6 @@
           if (comp) selectedCompanies.push(comp);
         }
       });
-
       selectedCompanies.forEach((company, index) => {
         if (typeof company[`${topic}Score`] === "number") {
           setTimeout(() => {
@@ -670,22 +629,18 @@
       });
     }
 
-    // Renders all 3 axes
     function renderAllMarkers() {
       renderMarkersForAxis("workAxis", "work");
       renderMarkersForAxis("learningAxis", "learning");
       renderMarkersForAxis("livingAxis", "living");
     }
 
-    // Only reorder the filter list, do not refresh the bars
     function applySorting() {
-      // Save check states
       const checkboxes = document.querySelectorAll(".company-filter");
       const checkedSet = new Set();
       checkboxes.forEach(cb => {
         if (cb.checked) checkedSet.add(cb.dataset.company);
       });
-
       const sortOption = document.getElementById("sortSelect").value;
       switch (sortOption) {
         case "score-asc":
@@ -703,8 +658,6 @@
         default:
           break;
       }
-
-      // Re-populate filter list in sorted order
       const filterOptions = document.getElementById("filterOptions");
       filterOptions.innerHTML = "";
       companies.forEach((company) => {
@@ -713,15 +666,15 @@
         checkbox.type = "checkbox";
         checkbox.className = "company-filter";
         checkbox.dataset.company = company.name;
-        // preserve check state
         checkbox.checked = checkedSet.has(company.name);
-
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(company.name));
         filterOptions.appendChild(label);
       });
-
-      // No re-render => bars remain as is
+      // Re-bind the change event on new checkboxes
+      document.querySelectorAll(".company-filter").forEach(cb => {
+        cb.addEventListener("change", renderAllMarkers);
+      });
       console.log("Sort changed to:", sortOption, "(filter list updated, bars not refreshed).");
     }
 
@@ -749,18 +702,10 @@
       document.getElementById("sidebar").classList.toggle("collapsed");
     }
 
-    // Main initialization
     async function init() {
-      // 1. Populate the filter list
       populateFilterOptions(companies);
-
-      // 2. Fetch all scores (3 separate API calls per company)
       await fetchAllScores();
-
-      // 3. Render the markers once
       renderAllMarkers();
-
-      // 4. Attach event listeners
       document.querySelectorAll(".company-filter").forEach(cb => {
         cb.addEventListener("change", renderAllMarkers);
       });
@@ -768,9 +713,40 @@
       document.getElementById("uncheckAllBtn").addEventListener("click", uncheckAll);
       document.getElementById("searchInput").addEventListener("input", filterCompanyList);
       document.getElementById("collapseBtn").addEventListener("click", toggleSidebar);
-
-      // Sorting updates filter list only
       document.getElementById("sortSelect").addEventListener("change", applySorting);
+    }
+
+    async function fetchAllScores() {
+      const workRes = await fetchCategoryScores("work");
+      const learningRes = await fetchCategoryScores("learning");
+      const livingRes = await fetchCategoryScores("living");
+
+      companies.forEach(company => {
+        company.workScore = workRes[company.name] ?? 0;
+        company.learningScore = learningRes[company.name] ?? 0;
+        company.livingScore = livingRes[company.name] ?? 0;
+      });
+    }
+
+    async function fetchCategoryScores(category) {
+      const endpoint = `http://127.0.0.1:5000/sentiment/${encodeURIComponent(category)}`;
+      try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+          console.error(`Failed to fetch ${category} scores`);
+          return {};
+        }
+        console.log(`Fetched ${category} scores`);
+        return await response.json();
+      } catch (error) {
+        console.error(`Error fetching ${category} scores:`, error);
+        return {};
+      }
+    }
+
+    function getAggregateScore(company) {
+      const sum = (company.workScore || 0) + (company.learningScore || 0) + (company.livingScore || 0);
+      return sum / 3;
     }
 
     window.addEventListener("DOMContentLoaded", init);
