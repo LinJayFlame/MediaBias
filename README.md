@@ -19,3 +19,5 @@ The file needs to be opened through the extension, otherwise the default scores 
 ## Frontend
 
 - **Visualization**: Data is formatted for clear visualization of the different biases across topics and agencies.
+
+![alt text](image.png)
