@@ -43,11 +43,26 @@ Rules:
 """
 
 # Example Usage
-results = query_perplexity(query)
-print(results)
+# results = query_perplexity(query)
 
-# asyncio.run(raw_data_scraping(input))  
-# asyncio.run(all_paragraph_scraping(input)) 
+
+# "https://www.bbc.com/news/business-34174795",
+# "https://www.bbc.com/news/business-34671952",
+# "https://www.brookings.edu/articles/ai-and-the-next-digital-divide-in-education",
+# "https://www.brookings.edu/articles/the-world-needs-a-premortem-on-generative-ai-and-its-use-in-education",
+# "https://www.channelnewsasia.com/today/voices/commentary-cyberloafing-new-norm-among-youths-why-its-bad-and-how-tackle-it-4867506",
+# "https://www.channelnewsasia.com/singapore/commentary-real-culprit-making-our-children-dumb-isnt-e-learning-990926",
+
+results = [
+"https://www.forbes.com/sites/michaelhorn/2017/11/14/new-research-answers-whether-technology-is-good-or-bad-for-learning",
+"https://www.forbes.com/sites/ronschmelzer/2024/05/28/how-ai-is-shaping-the-future-of-education"
+]
+
+
+
+for i in range(len(results)):
+    asyncio.run(all_paragraph_scraping(results[i], i))
+
 
 
 

@@ -1,0 +1,114 @@
+Artificial intelligence (AI) is not coming, it is already here and has already become an essential part of our lives – for better or worse, says one of the world’s leading experts on AI, Professor Toby Walsh, who is the chief AI scientist at the University of New South Wales in Sydney.
+
+The professor, who has authored several books on the impact of AI, explains that the technology is already being used in our daily lives and impacting the choices we make. In online shopping apps, for example, it influences what we buy. When we apply for jobs, AI has a say in whether we get shortlisted for the job, and even on how we vote.
+
+It can be unnerving. But he also sees the upside.
+
+“Without AI, medical technology wouldn’t have come so far, we would still be getting lost on back roads in our GPS-free cars, and smartphones wouldn’t be so, well, smart,” he says.
+
+But as we build more intelligent and autonomous machines, he stresses that we need to think about the bigger impact AI will have, not just on all of us individually, but also on societies and the planet.
+
+In a wide-ranging interview with The Straits Times, Prof Walsh explores the various issues raised by the use of AI, including the ethical considerations and unexpected consequences AI poses: Will automation take away most jobs? Is it possible for AI to make fair, objective decisions? Will AI intelligence overtake human intelligence? And what lies in store for “Homo digitalis”, the people of the not-so-distant future, who will be living among fully functioning artificial intelligence?
+
+Q: What are aspects of development in AI that excite you? And aspects that worry you?
+
+A: There are many things that AI is going to help us do that are going to make our lives better. Take just health and education.
+
+In education, AI can help bring the best knowledge to apps in smartphones, and democratise access in remote and underserved communities.
+
+In health, AI offers so much promise. Many deaths are happening due to causes that can be fixed, and AI will help us do that. AI will also speed the time in finding new drugs and vaccines.
+
+AI is also going to help us tackle many other wicked problems. It will help us deal with climate change, do away with famine and shortage of water. 
+
+Now, you asked about the aspects that worry me, and there are a few areas which concern me greatly.
+
+We are already seeing AI being used to sway people and to cause divisions within society. AI algorithms running social media are distorting our conversation, and AI is also used to generate fake news and fake tweets that are overwhelming social media channels. 
+
+And another worrying development – the use of lethal autonomous weapons that can destroy human life and don’t need to be fed, paid or rested. 
+
+If history has taught us one thing, the promise of clean war is and will likely remain an illusion. Autonomous weapons further disengage us from the act of war and its moral considerations. As with every other weapon of mass destruction – chemical weapons, biological weapons and nuclear weapons – we will need to ban autonomous weapons.
+
+Q: What about AI taking away our jobs?
+
+ A: There have been dire predictions about the number of jobs being replaced, which in my opinion, should be treated with a pinch of salt. 
+
+Technology has always created more jobs than it has ever destroyed. Yes, jobs will be impacted, but there will be many more jobs created. What the balance is, whether as many jobs get created as destroyed, we don’t know.
+
+One thing though we do know with pretty great certainty is that the new jobs will require different skills than the old jobs, and so, that’s going to be the real challenge. 
+
+We need to figure out what it is that people need to learn. What skills do people need so that they can be prepared for this AI-enabled future?
+
+Q: How should employers and governments respond to work changing with AI? 
+
+A: Companies and governments will need to invest in the most valuable asset in their business – their people.
+
+Everyone must adopt lifelong learning and we must help people reinvent themselves – to cultivate emotional and social intelligence, creativity, problem-solving capacities, adaptability. 
+
+These are all the things that computers don’t do very well today and probably for quite a long time.
+
+Automation will free up people’s time. So employers will have two choices: Do the work with fewer people, or use their workers’ time to improve their product and services. Companies that last will be those that do the second. 
+
+For individuals, as AI takes over many of our tasks, we will have more leisure in future. I hope this will lead to the “Second Renaissance”, where there will be more arts, artisanship, community engagement, and progressive debates.
+
+Q: What are the ethical considerations in shaping the role of a technology like AI?
+
+A: I think one of the misconceptions that people have is that some sense of new ethics is required to deal with the new challenges that AI poses.
+
+The ethical questions we should be asking are the same questions we have asked about any other technologies. For example, taking people’s private information and using this to manipulate elections is bad behaviour.
+
+We don’t need any new ethics to decide this. First and foremost, it is about people and companies adopting good values and acting to ensure them.
+
+So yes, we should question whether it is done in a transparent way, is it done in a way that is fair and equitable. Those are the things we should be worried about with all technologies. There is nothing new about it.
+
+There is one small exception, one thing that is new and was not true of any previous technologies – which is the idea of autonomy.
+
+Machines have some independence to make decisions on their own, to go off and act without much or no oversight. Which is why the most difficult ethical challenges AI poses are questions about autonomy.
+
+We see this already in the discussion around autonomous cars, that autonomous cars will at some point be killing people, by mistake, of course, and who is going to be held accountable? What sort of decisions should we allow them to make?
+
+Q: How did you come up with the date 2062 as the year that Homo sapiens becomes “Homo digitalis” as you predict in your book 2062: The World That AI Made?
+
+A: It is 2062 because I surveyed 300 of my colleagues who are experts around the world in AI when machines would be as capable as humans and the average answer they said was 2062. “Homo digitalis” is the digital selves that we will have.
+
+I am not sure that we are necessarily going to be physically one. With the machines, increasingly, we will be spending our lives in digital spaces, interacting with other digital beings, avatars of our friends and our colleagues, and our lives are going to stop being so physical and be much more digital. And we are going to become one, in many respects, with our digital selves.
+
+So, we will live simultaneously in physical, virtual and artificial worlds.
+
+Q: Will robots become conscious by then – in 2062?
+
+A: Who knows? It is one of the biggest scientific questions. Is consciousness something that is distinct to biology or something that we can recreate in silicon?
+
+They are not conscious today as far as we can tell. It is possible; there is not any law of physics we know of today that will be violated if they become conscious in the future. I think it is one of the great scientific mysteries of the next century. 
+
+Q: Do you think machine intelligence will exceed human intelligence in the years to come? And should we be worried about it?
+
+A: We are intelligent, that is our great ability and that is why we got to be in charge of the whole planet, for better or worse, and not because we were the strongest or fastest. We were the smart ape and we used that to build tools, to invent language and to invent writing.
+
+But our intelligence is just a point on a scale, and there are many reasons to believe that machines could be smarter than us.
+
+They’ll think faster than us. We think of biological speed in the tens of hertz, computers think in the gigahertz and in the millions of instructions per second. Our brains are limited by the size of our skulls – we can’t get any bigger brains, but we can have unlimited amounts of memory in our computers. 
+
+So there are lots of limitations that machines won’t have that humans have. So, they’ll be smarter than us.
+
+And I am not worried about that – because it’s going to tackle many of the wicked problems, help us deal with climate change, help us with all the diseases and help us cure cancer. AI is going to help us make our lives better. So, no I’m not particularly worried about machines becoming too intelligent. Indeed, I think the problem today is quite the opposite: We’re giving responsibilities to machines that are not as developed and not intelligent enough. 
+
+Professor Toby Walsh, 59, is Laureate Fellow and Scientia Professor of Artificial Intelligence at the Department of Computer Science and Engineering at the University of New South Wales.
+
+Often cited as one of the world’s leading scientists in artificial intelligence, he has authored many books on AI, including Machines That Think: The Future Of Artificial Intelligence and Machines Behaving Badly: The Morality Of AI, where he talks about morality and ethics in the development of technology and the danger of handing over decision-making to machines.
+
+In 2062: The World That AI Made, he predicts the transformation of homo sapiens into homo digitalis, a state in which human thought will be replaced by digital thought, and considers the impact AI will have on work, war, politics, economics and everyday human life and, indeed, human death
+
+Born just outside London and educated at Cambridge University, Prof Walsh lives in Sydney, Australia.
+
+What: The Straits Times Education Forum 2024, in partnership with Singapore Management University and in support of the national SkillsFuture movement.Topic: The AI Revolution: Are You Ready For It?When: Friday, March 8, 9.30am-12pmWhere: Yong Pung How School of Law, Basement 1 SMU Hall, Singapore Management University
+
+Join ST's WhatsApp Channel and get the latest news and must-reads.
+
+
+
+Terms and conditions apply
+
+Frequently asked questions
+
+MDDI (P) 048/10/2024. Published by SPH Media Limited, Co. Regn. No. 202120748H. Copyright © 2025 SPH Media Limited. All rights reserved.
+

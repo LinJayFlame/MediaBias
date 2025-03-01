@@ -9,7 +9,8 @@ def health():
 
 @app.route("/sentiment")
 def sentiment():
-    return getSentiments()
+    category = request.args.get("category")
+    return getSentiments(category)
 
 if __name__ == '__main__':
     app.run(debug=True)

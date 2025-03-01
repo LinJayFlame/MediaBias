@@ -20,10 +20,10 @@ async def raw_data_scraping(query):
     except Exception as e:
         return e
 
-async def all_paragraph_scraping(query):
+async def all_paragraph_scraping(query, i):
     try:
         request, soup = await scrape(query)
-        file_write = open(f"AllParagraph.txt", "w")
+        file_write = open(f"scraped{i}.txt", "w")
         paragraph = ""
         for para in soup.find_all("p"):
             paragraph = para.get_text()

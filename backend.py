@@ -15,23 +15,45 @@ class SimpleDataset:
 
 # actual code is commented out as the roberta model takes a long time to execute the query
 # a cache of the results is used instead
-def getSentiments():
+def getSentiments(category):
     # nyt_score = sentimentAnalysis(["New_York_Times.csv", "New_York_Times_2.csv", ...], "work")
     # st_score = sentimentAnalysis(...)
     # ...
-
-    return {
-        "New York Times": 0.50,
-        "Straits Times": 0.78,
-        "BBC News": 0.74,
-        "The Guardian": 0.77,
-        "CNN": 0.72,
-        "Harvard Business Review": 0.72,
-        "Forbes": 0.89,
-        "CNA": 0.86,
-        "Brookings": 0.78
-    }
-
+    if category == "work":
+        return {
+            "New York Times": 0.50,
+            "Straits Times": 0.78,
+            "BBC News": 0.74,
+            "The Guardian": 0.77,
+            "CNN": 0.72,
+            "Forbes": 0.89,
+            "CNA": 0.86,
+            "Brookings": 0.78
+        }
+    elif category == "living":
+        return {
+            "New York Times": 0.,
+            "Straits Times": 0.,
+            "BBC News": 0.,
+            "The Guardian": 0.,
+            "CNN": 0.,
+            "Forbes": 0.,
+            "CNA": 0.,
+            "Brookings": 0.
+        }
+    elif category == "learning":
+        return {
+            "New York Times": 0.,
+            "Straits Times": 0.,
+            "BBC News": 0.,
+            "The Guardian": 0.,
+            "CNN": 0.,
+            "Forbes": 0.,
+            "CNA": 0.,
+            "Brookings": 0.
+        }
+    else:
+        return None
 
 def sentimentAnalysis(articleList: list[str], category: str):
     model_name = "siebert/sentiment-roberta-large-english"
