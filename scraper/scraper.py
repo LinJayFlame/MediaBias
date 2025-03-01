@@ -12,7 +12,7 @@ async def scrape(url):
 
 async def raw_data_scraping(query):
     try:
-        request, soup = await scrape(query)
+        request, _ = await scrape(query)
         file_write = open(f"RawData.txt", "w")
         file_write.write(f"{request.content}")
         file_write.close()
@@ -22,8 +22,8 @@ async def raw_data_scraping(query):
 
 async def all_paragraph_scraping(query, i):
     try:
-        request, soup = await scrape(query)
-        file_write = open(f"scraped{i}.txt", "w")
+        _ , soup = await scrape(query)
+        file_write = open(f"NewsArticle{i}.txt", "w")
         paragraph = ""
         for para in soup.find_all("p"):
             paragraph = para.get_text()

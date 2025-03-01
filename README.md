@@ -1,24 +1,21 @@
 # MediaBias
 
+## How to Run
+
+1. **Run the Application**: Execute `python app.py` to ensure that the app is running.
+2. **Install Live Server**: Install the [Live Server by Ritwick Dey](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VSCode.
+3. **Open the HTML File**: Click "Go Live" at the bottom right hand corner of VSCode
+You should be able to see the news agencies along different points of the scale. 
+The file needs to be opened through the extension, otherwise the default scores will be 0.
+
 ## Data Collection
 
-- **News Agencies**: Data is collected from 7 different news agencies.
-- **Methods**:
-  - **APIs**: Data is fetched using APIs.
-  - **Articles**: 2 articles are retrieved from each agency.
-- **Preprocessing**: Collected data is cleaned and preprocessed for further analysis.
+- **Methods**: Generative AI and a web scraper was used to retrieve articles that are relevant to the topics we are examining from different news agencies.
 
 ## Algorithm
 
-- **Sentiment Analysis**: Utilizes RoBERTa for evaluating the sentiment of the articles.
-- **Reliability Analysis**: Assessed either via API calls or through internal calculations (TBD).
+- **Sentiment Analysis**: Utilizes RoBERTa for evaluating the overall sentiment of the articles published by the same news agency.
 
 ## Frontend
 
-- **Visualization**: Data is formatted for clear and effective visualization.
-
-## How to Run
-
-1. **Install Live Server**: Install [Live Server by Ritwick Dey](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VSCode.
-2. **Run the Application**: Execute `app.py` to ensure that the app is running.
-3. **Open the HTML File**: Right-click on the desired `.html` file and select "Open With Live Server".
+- **Visualization**: Data is formatted for clear visualization of the different biases across topics and agencies.
