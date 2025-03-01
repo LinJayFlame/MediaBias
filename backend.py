@@ -31,21 +31,21 @@ def getSentiments(category):
         }
     elif category == "living":
         return {
-            "Straits Times": 0.,
-            "BBC News": 0.58,
-            "The Guardian": 0.,
+            "Straits Times": 0.78,
+            "BBC News": 0.80,
+            "The Guardian": 0.91,
             "CNN": 0.77,
             "Forbes": 0.90,
-            "CNA": 0.,
-            "Brookings": 0.
+            "CNA": 0.53,
+            "Brookings": 0.81
         }
     elif category == "learning":
         return {
-            "Straits Times": 0.,
-            "BBC News": 0.,
-            "The Guardian": 0.,
+            "Straits Times": 0.87,
+            "BBC News": 0.58,
+            "The Guardian": 0.73,
             "CNN": 0.63,
-            "Forbes": 0.,
+            "Forbes": 0.80,
             "CNA": 0.57,
             "Brookings": 0.85
         }
@@ -87,6 +87,3 @@ def get_score(file: str, category: str, tokeniser, trainer):
 
     scores = predictions.predictions.argmax(-1)
     return scores.mean()
-
-score = sentimentAnalysis(["forbes.csv", "forbes2.csv"], "living")
-print(score)

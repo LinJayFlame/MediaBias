@@ -1,8 +1,8 @@
 import csv
 
-lst = ["bbc", "brookings", "cna", "cnn", "forbes", "guardian", "straitstimes"]
+lst = ["forbes", "guardian", "straitstimes"]
 for e in lst:
-    input_file = f"data/living/{e}2.txt"
+    input_file = f"data/learning/{e}2.txt"
     output_file = f"data/{e}2.csv"
 
 # Open the txt file
