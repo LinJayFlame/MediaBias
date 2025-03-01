@@ -21,7 +21,7 @@ def query_perplexity(query):
     
     payload = {
         "query": query,  # Your search query
-        "num_results": 5  # Number of results you want
+        "num_results": 2  # Number of results you want
     }
     
     response = requests.post(BASE_URL, json=payload, headers=headers)
@@ -32,18 +32,29 @@ def query_perplexity(query):
         print(f"Error: {response.status_code}, {response.text}")
         return None
 
-#getting user enquiry
-input = ""
+company = "BBC News"
+query = f"""
+    You are a useful search engine for {company}.
+    The user wants to search for articles about the negative effects of technology or AI on learning or education 
 
-# asyncio.run(raw_data_scraping(input))  
-asyncio.run(all_paragraph_scraping(input)) 
-
+Rules:
+1. Provide only the correct unique URLs for {company} that talks about the impact of technology on education
+2. Do not show the intermediate steps
+"""
 
 # Example Usage
-results = query_perplexity("")
+results = query_perplexity(query)
 print(results)
 
- 
+# asyncio.run(raw_data_scraping(input))  
+# asyncio.run(all_paragraph_scraping(input)) 
+
+
+
+
+
+
+
 #gives a sentiment analysis on each company based on a given topic
 #when user queries
 #perplexity AI queries based on that query and the news sources that we saved in our database
